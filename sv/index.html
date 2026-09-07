@@ -218,10 +218,6 @@
       margin-bottom: 18px;
     }
 
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
     label {
       display: block;
       margin-bottom: 6px;
@@ -260,10 +256,28 @@
       width: auto;
     }
 
-    .lifting-location {
+    .extra-field {
       display: none;
       margin: 0 0 18px 26px;
       max-width: 500px;
+      padding: 14px;
+      background: #f7f8f8;
+    }
+
+    .extra-field label {
+      margin-bottom: 8px;
+    }
+
+    .radio-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      margin-bottom: 7px;
+    }
+
+    .radio-row input {
+      width: auto;
     }
 
     .quote .button {
@@ -303,10 +317,6 @@
         grid-template-columns: 1fr;
       }
 
-      .field.full {
-        grid-column: auto;
-      }
-
       section {
         padding: 65px 6%;
       }
@@ -320,7 +330,7 @@
         font-size: 30px;
       }
 
-      .lifting-location {
+      .extra-field {
         margin-left: 0;
       }
     }
@@ -455,21 +465,40 @@
       <div class="checks">
 
         <label class="check-row">
-          <input type="checkbox" value="Båtförvaring">
+          <input
+            type="checkbox"
+            id="storage"
+            value="Båtförvaring"
+            onchange="toggleStorage()"
+          >
           Båtförvaring
         </label>
+
+        <div id="storageOptions" class="extra-field">
+          <label>Typ av förvaring</label>
+
+          <label class="radio-row">
+            <input type="radio" name="storageType" value="Varmförvaring">
+            Varmförvaring
+          </label>
+
+          <label class="radio-row">
+            <input type="radio" name="storageType" value="Kallförvaring">
+            Kallförvaring
+          </label>
+        </div>
 
         <label class="check-row">
           <input
             type="checkbox"
             id="lifting"
             value="Upptagning och sjösättning"
-            onchange="toggleLiftingLocation()"
+            onchange="toggleLifting()"
           >
           Upptagning & sjösättning
         </label>
 
-        <div id="liftingLocation" class="lifting-location">
+        <div id="liftingOptions" class="extra-field">
           <label for="location">Var ska båten tas upp?</label>
           <input id="location" type="text">
         </div>
@@ -480,9 +509,23 @@
         </label>
 
         <label class="check-row">
-          <input type="checkbox" value="Motorservice">
+          <input
+            type="checkbox"
+            id="engineService"
+            value="Motorservice"
+            onchange="toggleEngine()"
+          >
           Motorservice
         </label>
+
+        <div id="engineOptions" class="extra-field">
+          <label for="engine">Vilken motor har båten?</label>
+          <input
+            id="engine"
+            type="text"
+            placeholder="t.ex. Yamaha F150, Volvo Penta D4"
+          >
+        </div>
 
         <label class="check-row">
           <input type="checkbox" value="Reparationer">
@@ -536,16 +579,44 @@
 </footer>
 
 <script>
-function toggleLiftingLocation() {
+function toggleStorage() {
+  const storage = document.getElementById("storage");
+  const options = document.getElementById("storageOptions");
+
+  if (storage.checked) {
+    options.style.display = "block";
+  } else {
+    options.style.display = "none";
+
+    document.querySelectorAll('input[name="storageType"]').forEach(item => {
+      item.checked = false;
+    });
+  }
+}
+
+function toggleLifting() {
   const lifting = document.getElementById("lifting");
-  const liftingLocation = document.getElementById("liftingLocation");
+  const options = document.getElementById("liftingOptions");
   const location = document.getElementById("location");
 
   if (lifting.checked) {
-    liftingLocation.style.display = "block";
+    options.style.display = "block";
   } else {
-    liftingLocation.style.display = "none";
+    options.style.display = "none";
     location.value = "";
+  }
+}
+
+function toggleEngine() {
+  const engineService = document.getElementById("engineService");
+  const options = document.getElementById("engineOptions");
+  const engine = document.getElementById("engine");
+
+  if (engineService.checked) {
+    options.style.display = "block";
+  } else {
+    options.style.display = "none";
+    engine.value = "";
   }
 }
 
@@ -558,8 +629,21 @@ function sendQuote() {
   const width = document.getElementById("width").value;
   const message = document.getElementById("message").value;
 
+  const storage = document.getElementById("storage").checked;
   const lifting = document.getElementById("lifting").checked;
-  const location = document.getElementById("location").value;
+  const engineService = document.getElementById("engineService").checked;
+
+  const storageChoice =
+    document.querySelector('input[name="storageType"]:checked');
+
+  const storageType =
+    storageChoice ? storageChoice.value : "";
+
+  const location =
+    document.getElementById("location").value;
+
+  const engine =
+    document.getElementById("engine").value;
 
   const services = Array.from(
     document.querySelectorAll('.checks input[type="checkbox"]:checked')
@@ -583,11 +667,25 @@ Bredd: ${width}
 Önskade tjänster:
 ${services}`;
 
+  if (storage) {
+    body += `
+
+Typ av båtförvaring:
+${storageType}`;
+  }
+
   if (lifting) {
     body += `
 
 Plats för upptagning:
 ${location}`;
+  }
+
+  if (engineService) {
+    body += `
+
+Motor:
+${engine}`;
   }
 
   body += `
