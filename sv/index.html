@@ -442,8 +442,15 @@
 
       <div class="checks">
         <label><input type="checkbox" value="Båtförvaring"> Båtförvaring</label>
-        <label><input type="checkbox" value="Upptagning och sjösättning"> Upptagning & sjösättning</label>
-        <label><input type="checkbox" value="Båttransport"> Båttransport</label>
+        <label>
+  <input type="checkbox" id="lifting" value="Upptagning och sjösättning" onchange="toggleLiftingLocation()">
+  Upptagning & sjösättning
+</label>
+
+<div id="liftingLocation" style="display:none; margin: 5px 0 12px 26px;">
+  <label for="location">Var ska båten tas upp?</label>
+  <input id="location" type="text">
+</div>
         <label><input type="checkbox" value="Tvätt och rengöring"> Tvätt & rengöring</label>
         <label><input type="checkbox" value="Motorservice"> Motorservice</label>
         <label><input type="checkbox" value="Reparationer"> Reparationer</label>
@@ -490,7 +497,10 @@
   © 2026 Fagerlund Marine Ab
 </footer>
 
-<script>
+<script>function toggleLiftingLocation() {
+  const checked = document.getElementById("lifting").checked;
+  document.getElementById("liftingLocation").style.display =
+    checked ? "block" : "none";
 function sendQuote() {
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
