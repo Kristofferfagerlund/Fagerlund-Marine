@@ -7,692 +7,799 @@
 <title>Fagerlund Marine Ab</title>
 
 <style>
-
-/* =========================
-   GRUNDINSTÄLLNINGAR
-========================= */
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7f8;
-    color: #183447;
-    line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f7;
+  color: #183446;
+  line-height: 1.6;
 }
 
-
-/* =========================
-   MENY
-========================= */
+/* HEADER */
 
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding: 25px 7%;
+  padding: 18px 7%;
 
-    background: linear-gradient(
-        rgba(4, 29, 46, 0.75),
-        rgba(4, 29, 46, 0)
-    );
+  background: rgba(4, 29, 46, 0.90);
+  backdrop-filter: blur(8px);
 }
+
+/* TEXTLOGGA */
 
 .logo {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
+  line-height: 1;
 }
 
+.logo-main {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.logo-sub {
+  display: block;
+  margin-top: 7px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 7px;
+  text-align: center;
+}
+
+/* MENY */
+
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 
 nav {
-    display: flex;
-    gap: 28px;
+  display: flex;
+  gap: 24px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 nav a:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
-
-/* =========================
-   SPRÅKKNAPPAR
-========================= */
+/* SPRÅK */
 
 .languages {
-    display: flex;
-    gap: 5px;
+  display: flex;
+  gap: 6px;
 }
 
 .languages button {
-    padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,0.65);
+  background: transparent;
+  color: white;
 
-    border: 1px solid rgba(255,255,255,0.7);
-    border-radius: 5px;
+  padding: 7px 10px;
+  border-radius: 5px;
 
-    background: transparent;
-    color: white;
-
-    font-weight: bold;
-    cursor: pointer;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .languages button.active {
-    background: white;
-    color: #0b3d5c;
+  background: white;
+  color: #0b3d5c;
 }
 
-
-/* =========================
-   STORA BAKGRUNDSBILDEN
-========================= */
+/* HERO */
 
 .hero {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    padding: 140px 7% 80px;
+  padding: 150px 7% 80px;
 
-    color: white;
+  color: white;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(4, 29, 46, 0.88) 0%,
-            rgba(4, 29, 46, 0.65) 45%,
-            rgba(4, 29, 46, 0.20) 100%
-        ),
-        url("motorbat.jpg");
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 26, 42, 0.92) 0%,
+      rgba(3, 26, 42, 0.72) 45%,
+      rgba(3, 26, 42, 0.28) 100%
+    ),
+    url("motorbat.jpg");
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
-    max-width: 720px;
+  max-width: 700px;
 }
 
-.company-small {
-    font-size: 14px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
+.hero-small {
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 6vw, 78px);
-    line-height: 1.05;
-    margin-bottom: 25px;
+  font-size: clamp(46px, 6vw, 76px);
+  line-height: 1.05;
+  margin-bottom: 24px;
 }
 
 .hero p {
-    font-size: 20px;
-    max-width: 650px;
-    margin-bottom: 35px;
-    color: #e5edf1;
+  max-width: 650px;
+  margin-bottom: 34px;
+
+  color: #e3edf2;
+  font-size: 20px;
 }
 
-
-/* =========================
-   KNAPPAR
-========================= */
-
 .buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .button {
-    display: inline-block;
+  display: inline-block;
 
-    padding: 14px 24px;
+  padding: 14px 24px;
 
-    background: white;
-    color: #0b3d5c;
+  border-radius: 6px;
 
-    border-radius: 6px;
+  background: white;
+  color: #0b3d5c;
 
-    text-decoration: none;
-    font-weight: bold;
+  text-decoration: none;
+  font-weight: bold;
 
-    transition: 0.2s;
+  transition: 0.2s;
 }
 
 .button:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .button-outline {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
 }
 
-
-/* =========================
-   SEKTIONER
-========================= */
+/* SEKTIONER */
 
 section {
-    padding: 90px 7%;
+  padding: 90px 7%;
 }
 
 .section-heading {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 50px;
+  max-width: 820px;
+  margin: 0 auto 50px;
+  text-align: center;
 }
 
 .section-heading h2 {
-    font-size: 38px;
-    color: #0b3d5c;
-    margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #0b3d5c;
+  font-size: 40px;
 }
 
 .section-heading p {
-    color: #657986;
-    font-size: 18px;
+  color: #647783;
+  font-size: 18px;
 }
 
-
-/* =========================
-   TJÄNSTER
-========================= */
+/* TJÄNSTER */
 
 .services {
-    background: white;
+  background: white;
 }
 
 .service-grid {
-    max-width: 1150px;
-    margin: auto;
+  max-width: 1180px;
+  margin: auto;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .service-card {
-    background: #f4f7f8;
+  min-height: 210px;
 
-    padding: 35px;
+  padding: 32px;
 
-    border-radius: 10px;
-    border-top: 4px solid #0b3d5c;
+  background: #f5f7f8;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  border-top: 4px solid #0b3d5c;
 
-    transition: 0.2s;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+
+  transition: 0.2s;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-number {
-    font-size: 13px;
-    letter-spacing: 2px;
-    color: #718693;
-    margin-bottom: 15px;
+  transform: translateY(-5px);
 }
 
 .service-card h3 {
-    color: #0b3d5c;
-    font-size: 23px;
-    margin-bottom: 12px;
+  margin-bottom: 12px;
+
+  color: #0b3d5c;
+  font-size: 23px;
 }
 
+.service-card p {
+  color: #455b69;
+}
 
-/* =========================
-   OM OSS
-========================= */
+/* HELA KEDJAN */
+
+.chain {
+  background: #0b3d5c;
+  color: white;
+}
+
+.chain-inner {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.chain h2 {
+  margin-bottom: 18px;
+  font-size: 40px;
+}
+
+.chain p {
+  max-width: 850px;
+  margin: auto;
+
+  color: #dce8ee;
+  font-size: 19px;
+}
+
+/* OM OSS */
 
 .about {
-    background: #0b3d5c;
-    color: white;
+  background: #eef3f5;
 }
 
 .about-inner {
-    max-width: 950px;
-    margin: auto;
+  max-width: 950px;
+  margin: auto;
 }
 
 .about h2 {
-    font-size: 38px;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+
+  color: #0b3d5c;
+  font-size: 38px;
 }
 
 .about p {
-    max-width: 800px;
-    font-size: 18px;
-    color: #dbe6ec;
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
 }
 
-
-/* =========================
-   KONTAKT
-========================= */
+/* KONTAKT */
 
 .contact {
-    background: #eef3f5;
+  background: white;
 }
 
 .contact-grid {
-    max-width: 900px;
-    margin: auto;
+  max-width: 900px;
+  margin: auto;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .contact-card {
-    background: white;
+  padding: 34px;
 
-    padding: 35px;
+  text-align: center;
 
-    text-align: center;
+  background: #f4f7f8;
 
-    border-radius: 10px;
+  border-radius: 12px;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
 }
 
 .contact-card h3 {
-    color: #0b3d5c;
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+  color: #0b3d5c;
 }
 
 .contact-card a {
-    color: #0b3d5c;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
+  color: #0b3d5c;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
-    background: #062536;
-    color: #b7c9d2;
+  padding: 30px 20px;
 
-    text-align: center;
+  background: #062536;
+  color: #bacbd4;
 
-    padding: 28px 20px;
+  text-align: center;
 }
 
+/* MOBIL */
 
-/* =========================
-   MOBIL
-========================= */
+@media (max-width: 850px) {
 
-@media (max-width: 800px) {
+  header {
+    padding: 14px 5%;
+  }
 
-    header {
-        padding: 18px 5%;
-    }
+  .logo-main {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
 
-    .logo {
-        font-size: 16px;
-        letter-spacing: 2px;
-    }
+  .logo-sub {
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
 
-    nav {
-        display: none;
-    }
+  nav {
+    display: none;
+  }
 
-    .header-right {
-        gap: 10px;
-    }
+  .header-right {
+    gap: 8px;
+  }
 
-    .hero {
-        min-height: 100vh;
+  .hero {
+    min-height: 100vh;
 
-        padding: 120px 6% 60px;
+    padding: 125px 6% 60px;
 
-        background:
-            linear-gradient(
-                rgba(4, 29, 46, 0.65),
-                rgba(4, 29, 46, 0.75)
-            ),
-            url("motorbat.jpg");
+    background:
+      linear-gradient(
+        rgba(3, 26, 42, 0.68),
+        rgba(3, 26, 42, 0.78)
+      ),
+      url("motorbat.jpg");
 
-        background-size: cover;
-        background-position: center;
-    }
+    background-size: cover;
+    background-position: center;
+  }
 
-    .hero h1 {
-        font-size: 43px;
-    }
+  .hero h1 {
+    font-size: 43px;
+  }
 
-    .hero p {
-        font-size: 17px;
-    }
+  .hero p {
+    font-size: 17px;
+  }
 
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 
-    section {
-        padding: 65px 6%;
-    }
+  section {
+    padding: 65px 6%;
+  }
 
-    .section-heading h2,
-    .about h2 {
-        font-size: 32px;
-    }
+  .section-heading h2,
+  .chain h2,
+  .about h2 {
+    font-size: 32px;
+  }
 }
-
 </style>
 </head>
 
-
 <body>
-
-
-<!-- MENY -->
 
 <header>
 
-<a class="logo" href="#">
-    FAGERLUND MARINE
-</a>
+  <a href="#" class="logo">
+    <span class="logo-main">FAGERLUND</span>
+    <span class="logo-sub">MARINE</span>
+  </a>
 
-<div class="header-right">
+  <div class="header-right">
 
-<nav>
-    <a href="#services"
-       data-sv="Tjänster"
-       data-fi="Palvelut">Tjänster</a>
+    <nav>
+      <a href="#services"
+         data-sv="Tjänster"
+         data-fi="Palvelut">
+         Tjänster
+      </a>
 
-    <a href="#about"
-       data-sv="Om oss"
-       data-fi="Meistä">Om oss</a>
+      <a href="#about"
+         data-sv="Om oss"
+         data-fi="Meistä">
+         Om oss
+      </a>
 
-    <a href="#contact"
-       data-sv="Kontakt"
-       data-fi="Yhteystiedot">Kontakt</a>
-</nav>
+      <a href="#contact"
+         data-sv="Kontakt"
+         data-fi="Yhteystiedot">
+         Kontakt
+      </a>
+    </nav>
 
+    <div class="languages">
 
-<div class="languages">
+      <button
+        id="svButton"
+        class="active"
+        onclick="changeLanguage('sv')">
+        SV
+      </button>
 
-<button
-    id="svButton"
-    class="active"
-    onclick="changeLanguage('sv')">
-    SV
-</button>
+      <button
+        id="fiButton"
+        onclick="changeLanguage('fi')">
+        FI
+      </button>
 
-<button
-    id="fiButton"
-    onclick="changeLanguage('fi')">
-    FI
-</button>
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </header>
 
 
-
-<!-- STARTSIDA -->
-
 <section class="hero">
 
-<div class="hero-content">
+  <div class="hero-content">
 
-<div class="company-small">
-    FAGERLUND MARINE AB
-</div>
+    <div class="hero-small">
+      FAGERLUND MARINE AB
+    </div>
 
-<h1
-    data-sv="Din båt i trygga händer."
-    data-fi="Veneesi turvallisissa käsissä.">
-    Din båt i trygga händer.
-</h1>
+    <h1
+      data-sv="Din båt i trygga händer."
+      data-fi="Veneesi turvallisissa käsissä.">
+      Din båt i trygga händer.
+    </h1>
 
-<p
-    data-sv="Från upptagning och transport till service, reparationer och förvaring – vi tar hand om hela båten."
-    data-fi="Nostosta ja kuljetuksesta huoltoon, korjauksiin ja säilytykseen – huolehdimme veneestäsi kokonaisvaltaisesti.">
-    Från upptagning och transport till service, reparationer och förvaring – vi tar hand om hela båten.
-</p>
+    <p
+      data-sv="Från upptagning och transport till tvätt, motorservice, reparationer och förvaring – vi tar hand om hela båten."
+      data-fi="Nostosta ja kuljetuksesta pesuun, moottorihuoltoon, korjauksiin ja säilytykseen – huolehdimme veneestäsi kokonaisvaltaisesti.">
+      Från upptagning och transport till tvätt, motorservice, reparationer och förvaring – vi tar hand om hela båten.
+    </p>
 
+    <div class="buttons">
 
-<div class="buttons">
+      <a href="#services"
+         class="button"
+         data-sv="Våra tjänster"
+         data-fi="Palvelumme">
+         Våra tjänster
+      </a>
 
-<a
-    href="#services"
-    class="button"
-    data-sv="Se våra tjänster"
-    data-fi="Tutustu palveluihin">
-    Se våra tjänster
-</a>
+      <a href="#contact"
+         class="button button-outline"
+         data-sv="Kontakta oss"
+         data-fi="Ota yhteyttä">
+         Kontakta oss
+      </a>
 
-<a
-    href="#contact"
-    class="button button-outline"
-    data-sv="Kontakta oss"
-    data-fi="Ota yhteyttä">
-    Kontakta oss
-</a>
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
+<section class="services" id="services">
 
-<!-- TJÄNSTER -->
+  <div class="section-heading">
 
-<div class="service-card">
+    <h2
+      data-sv="Vi tar hand om hela kedjan"
+      data-fi="Huolehdimme koko ketjusta">
+      Vi tar hand om hela kedjan
+    </h2>
 
-<h3
-    data-sv="Båtförvaring"
-    data-fi="Venesäilytys">
-    Båtförvaring
-</h3>
+    <p
+      data-sv="Från upptagning till färdig förvaring – du kan lämna hela arbetet åt oss."
+      data-fi="Nostosta valmiiseen säilytykseen – voit jättää koko työn meidän hoidettavaksemme.">
+      Från upptagning till färdig förvaring – du kan lämna hela arbetet åt oss.
+    </p>
 
-<p
-    data-sv="Trygg och smidig förvaring av din båt mellan säsongerna."
-    data-fi="Turvallinen ja vaivaton veneen säilytys veneilykausien välillä.">
-    Trygg och smidig förvaring av din båt mellan säsongerna.
-</p>
-
-</div>
+  </div>
 
 
-</div>
+  <div class="service-grid">
+
+    <div class="service-card">
+
+      <h3
+        data-sv="Upptagning & sjösättning"
+        data-fi="Nosto ja vesillelasku">
+        Upptagning & sjösättning
+      </h3>
+
+      <p
+        data-sv="Vi sköter upptagning och sjösättning av din båt på ett tryggt och smidigt sätt."
+        data-fi="Hoidamme veneesi noston ja vesillelaskun turvallisesti ja vaivattomasti.">
+        Vi sköter upptagning och sjösättning av din båt på ett tryggt och smidigt sätt.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <h3
+        data-sv="Båttransport"
+        data-fi="Venekuljetus">
+        Båttransport
+      </h3>
+
+      <p
+        data-sv="Säker och smidig transport av din båt mellan hamn, förvaring och verkstad."
+        data-fi="Turvallinen ja sujuva veneen kuljetus sataman, säilytyksen ja korjaamon välillä.">
+        Säker och smidig transport av din båt mellan hamn, förvaring och verkstad.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <h3
+        data-sv="Tvätt & rengöring"
+        data-fi="Pesu ja puhdistus">
+        Tvätt & rengöring
+      </h3>
+
+      <p
+        data-sv="Vi tvättar och rengör båten efter upptagning eller inför förvaring."
+        data-fi="Pesemme ja puhdistamme veneen noston jälkeen tai ennen säilytystä.">
+        Vi tvättar och rengör båten efter upptagning eller inför förvaring.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <h3
+        data-sv="Motorservice"
+        data-fi="Moottorihuolto">
+        Motorservice
+      </h3>
+
+      <p
+        data-sv="Service och underhåll av båtmotorer för en trygg och problemfri båtsäsong."
+        data-fi="Venemoottorien huolto ja kunnossapito turvallista ja huoletonta veneilykautta varten.">
+        Service och underhåll av båtmotorer för en trygg och problemfri båtsäsong.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <h3
+        data-sv="Reparationer"
+        data-fi="Korjaukset">
+        Reparationer
+      </h3>
+
+      <p
+        data-sv="Vi utför reparationer och åtgärdar problem så att båten hålls i gott skick."
+        data-fi="Teemme korjauksia ja korjaamme viat, jotta veneesi pysyy hyvässä kunnossa.">
+        Vi utför reparationer och åtgärdar problem så att båten hålls i gott skick.
+      </p>
+
+    </div>
+
+
+    <div class="service-card">
+
+      <h3
+        data-sv="Båtförvaring"
+        data-fi="Venesäilytys">
+        Båtförvaring
+      </h3>
+
+      <p
+        data-sv="Trygg och smidig förvaring av din båt mellan säsongerna."
+        data-fi="Turvallinen ja vaivaton veneen säilytys veneilykausien välillä.">
+        Trygg och smidig förvaring av din båt mellan säsongerna.
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
+
+<section class="chain">
+
+  <div class="chain-inner">
+
+    <h2
+      data-sv="En kontakt för hela båten"
+      data-fi="Yksi yhteyshenkilö koko veneelle">
+      En kontakt för hela båten
+    </h2>
+
+    <p
+      data-sv="Vi kan sköta hela processen åt dig: upptagning, transport, tvätt, motorservice, reparationer och förvaring. När nästa säsong börjar hjälper vi dig även med sjösättningen."
+      data-fi="Voimme hoitaa koko prosessin puolestasi: noston, kuljetuksen, pesun, moottorihuollon, korjaukset ja säilytyksen. Seuraavan kauden alkaessa autamme myös vesillelaskussa.">
+      Vi kan sköta hela processen åt dig: upptagning, transport, tvätt, motorservice, reparationer och förvaring.
+    </p>
+
+  </div>
+
 </section>
+
 
 <section class="about" id="about">
 
-<div class="about-inner">
+  <div class="about-inner">
 
-<h2
-    data-sv="Fagerlund Marine Ab"
-    data-fi="Fagerlund Marine Ab">
-    Fagerlund Marine Ab
-</h2>
+    <h2>
+      Fagerlund Marine Ab
+    </h2>
 
-<p
-    data-sv="Vi erbjuder båtförvaring, service och underhåll med fokus på personlig och pålitlig service."
-    data-fi="Tarjoamme veneiden säilytystä, huoltoa ja kunnossapitoa henkilökohtaisella ja luotettavalla palvelulla.">
-    Vi erbjuder båtförvaring, service och underhåll med fokus på personlig och pålitlig service.
-</p>
+    <p
+      data-sv="Vi erbjuder personlig och pålitlig service för båtägare. Vårt mål är att göra båtägandet enkelt och smidigt genom att samla de tjänster du behöver på ett och samma ställe."
+      data-fi="Tarjoamme veneilijöille henkilökohtaista ja luotettavaa palvelua. Tavoitteemme on tehdä veneen omistamisesta helppoa tarjoamalla tarvitsemasi palvelut samasta paikasta.">
+      Vi erbjuder personlig och pålitlig service för båtägare.
+    </p>
 
-<p
-    data-sv="Vårt mål är enkelt: mindre bekymmer med båten och mer tid på vattnet."
-    data-fi="Tavoitteemme on yksinkertainen: vähemmän huolia veneestä ja enemmän aikaa vesillä.">
-    Vårt mål är enkelt: mindre bekymmer med båten och mer tid på vattnet.
-</p>
+    <p
+      data-sv="Mindre arbete med båten – mer tid på vattnet."
+      data-fi="Vähemmän työtä veneen kanssa – enemmän aikaa vesillä.">
+      Mindre arbete med båten – mer tid på vattnet.
+    </p>
 
-</div>
+  </div>
 
 </section>
 
-
-
-<!-- KONTAKT -->
 
 <section class="contact" id="contact">
 
-<div class="section-heading">
+  <div class="section-heading">
 
-<h2
-    data-sv="Kontakta oss"
-    data-fi="Ota yhteyttä">
-    Kontakta oss
-</h2>
+    <h2
+      data-sv="Kontakta oss"
+      data-fi="Ota yhteyttä">
+      Kontakta oss
+    </h2>
 
-<p
-    data-sv="Hör av dig för frågor, prisuppgifter eller bokning."
-    data-fi="Ota yhteyttä kysymyksiä, hintoja tai varauksia varten.">
-    Hör av dig för frågor, prisuppgifter eller bokning.
-</p>
+    <p
+      data-sv="Hör av dig för frågor, prisuppgifter eller bokning."
+      data-fi="Ota yhteyttä kysymyksiä, hintoja tai varauksia varten.">
+      Hör av dig för frågor, prisuppgifter eller bokning.
+    </p>
 
-</div>
-
-
-<div class="contact-grid">
+  </div>
 
 
-<div class="contact-card">
+  <div class="contact-grid">
 
-<h3
-    data-sv="Telefon"
-    data-fi="Puhelin">
-    Telefon
-</h3>
+    <div class="contact-card">
 
-<a href="tel:+358503220096">
-    +358 50 322 0096
-</a>
+      <h3
+        data-sv="Telefon"
+        data-fi="Puhelin">
+        Telefon
+      </h3>
 
-</div>
+      <a href="tel:+358503220096">
+        +358 50 322 0096
+      </a>
 
-
-
-<div class="contact-card">
-
-<h3
-    data-sv="E-post"
-    data-fi="Sähköposti">
-    E-post
-</h3>
-
-<a href="mailto:kristoffer@fagerlundmarine.fi">
-    kristoffer@fagerlundmarine.fi
-</a>
-
-</div>
+    </div>
 
 
-</div>
+    <div class="contact-card">
+
+      <h3
+        data-sv="E-post"
+        data-fi="Sähköposti">
+        E-post
+      </h3>
+
+      <a href="mailto:kristoffer@fagerlundmarine.fi">
+        kristoffer@fagerlundmarine.fi
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-
 <footer>
-    © 2026 Fagerlund Marine Ab
+  © 2026 Fagerlund Marine Ab
 </footer>
 
 
-
-<!-- SPRÅKBYTE -->
-
 <script>
-
 function changeLanguage(language) {
 
-    const elements = document.querySelectorAll("[data-sv]");
+  const elements = document.querySelectorAll("[data-sv]");
 
-    elements.forEach(function(element) {
+  elements.forEach(function(element) {
 
-        if (language === "sv") {
-            element.textContent = element.getAttribute("data-sv");
-        }
+    if (language === "sv") {
+      element.textContent = element.getAttribute("data-sv");
+    } else {
+      element.textContent = element.getAttribute("data-fi");
+    }
 
-        if (language === "fi") {
-            element.textContent = element.getAttribute("data-fi");
-        }
+  });
 
-    });
+  document.getElementById("svButton")
+    .classList.toggle("active", language === "sv");
 
+  document.getElementById("fiButton")
+    .classList.toggle("active", language === "fi");
 
-    document.getElementById("svButton")
-        .classList.toggle("active", language === "sv");
+  document.documentElement.lang = language;
 
-    document.getElementById("fiButton")
-        .classList.toggle("active", language === "fi");
-
-
-    document.documentElement.lang = language;
-
-    localStorage.setItem("fagerlundLanguage", language);
+  localStorage.setItem("fagerlundLanguage", language);
 }
-
-
-/* Kom ihåg vilket språk besökaren valde */
 
 const savedLanguage =
-    localStorage.getItem("fagerlundLanguage");
+  localStorage.getItem("fagerlundLanguage");
 
-if (savedLanguage) {
-    changeLanguage(savedLanguage);
+if (savedLanguage === "fi") {
+  changeLanguage("fi");
+} else {
+  changeLanguage("sv");
 }
-
 </script>
-
 
 </body>
 </html>
