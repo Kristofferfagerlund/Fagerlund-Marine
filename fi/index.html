@@ -9,7 +9,6 @@
   <meta name="description" content="Fagerlund Marine Ab tarjoaa venesäilytystä, veneiden nostoja ja vesillelaskuja, venekuljetuksia, moottorihuoltoa, pesua ja korjauksia Kemiönsaarella.">
 
   <link rel="canonical" href="https://fagerlundmarine.fi/fi/">
-
   <link rel="alternate" hreflang="fi" href="https://fagerlundmarine.fi/fi/">
   <link rel="alternate" hreflang="sv" href="https://fagerlundmarine.fi/sv/">
   <link rel="alternate" hreflang="x-default" href="https://fagerlundmarine.fi/fi/">
@@ -22,11 +21,7 @@
     "url": "https://fagerlundmarine.fi/fi/",
     "telephone": "+358503220096",
     "email": "kristoffer@fagerlundmarine.fi",
-    "areaServed": {
-      "@type": "Place",
-      "name": "Kemiönsaari"
-    },
-    "description": "Venesäilytys ja kattavat venepalvelut Kemiönsaarella: nosto, vesillelasku, venekuljetus, pesu, moottorihuolto ja korjaukset."
+    "areaServed": "Kemiönsaari"
   }
   </script>
 
@@ -44,7 +39,7 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: #17212b;
-      background: #ffffff;
+      background: white;
       line-height: 1.6;
     }
 
@@ -149,6 +144,8 @@
       text-decoration: none;
       padding: 14px 24px;
       font-weight: 600;
+      border: 0;
+      cursor: pointer;
     }
 
     section {
@@ -167,7 +164,9 @@
       color: #53606b;
     }
 
-    .services {
+    .services,
+    .quote,
+    .contact {
       background: #f4f5f5;
     }
 
@@ -215,8 +214,87 @@
       color: #53606b;
     }
 
-    .contact {
-      background: #f4f5f5;
+    .quote-box {
+      max-width: 850px;
+      background: white;
+      padding: 38px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #071725;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #c9cfd4;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .checks {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      color: #071725;
+    }
+
+    .check-row input {
+      width: auto;
+    }
+
+    .extra-field {
+      display: none;
+      margin: 0 0 18px 26px;
+      max-width: 500px;
+      padding: 14px;
+      background: #f7f8f8;
+    }
+
+    .extra-field label {
+      margin-bottom: 8px;
+    }
+
+    .radio-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      margin-bottom: 7px;
+    }
+
+    .radio-row input {
+      width: auto;
+    }
+
+    .quote .button {
+      background: #071725;
+      color: white;
     }
 
     .contact-box {
@@ -242,48 +320,30 @@
     }
 
     @media (max-width: 850px) {
-      header {
-        padding: 14px 5%;
-      }
-
       nav {
         display: none;
       }
 
-      .right {
-        gap: 10px;
-      }
-
-      .logo {
-        font-size: 16px;
-        letter-spacing: 3px;
-      }
-
-      .logo small {
-        font-size: 8px;
-        letter-spacing: 5px;
-      }
-
-      .hero {
-        min-height: 85vh;
-        padding-left: 6%;
-        padding-right: 6%;
-      }
-
-      .hero p {
-        font-size: 17px;
+      .service-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
       }
 
       section {
         padding: 65px 6%;
       }
 
-      .service-grid {
-        grid-template-columns: 1fr;
+      .hero {
+        padding-left: 6%;
+        padding-right: 6%;
       }
 
       .section-title {
         font-size: 30px;
+      }
+
+      .extra-field {
+        margin-left: 0;
       }
     }
   </style>
@@ -300,6 +360,7 @@
   <div class="right">
     <nav>
       <a href="#palvelut">Palvelut</a>
+      <a href="#tarjous">Pyydä tarjous</a>
       <a href="#meista">Meistä</a>
       <a href="#yhteystiedot">Yhteystiedot</a>
     </nav>
@@ -319,11 +380,10 @@
 
       <p>
         Venesäilytys ja venepalvelut Kemiönsaarella. Nostosta ja kuljetuksesta
-        pesuun, moottorihuoltoon, korjauksiin ja säilytykseen – huolehdimme
-        veneestäsi kokonaisvaltaisesti.
+        pesuun, moottorihuoltoon, korjauksiin ja säilytykseen – huolehdimme koko veneestä.
       </p>
 
-      <a class="button" href="#yhteystiedot">Ota yhteyttä</a>
+      <a class="button" href="#tarjous">Pyydä tarjous venesäilytyksestä</a>
     </div>
   </section>
 
@@ -331,41 +391,167 @@
     <h2 class="section-title">Venepalvelut Kemiönsaarella</h2>
 
     <p class="section-intro">
-      Fagerlund Marine Ab tarjoaa kattavat venepalvelut Kemiönsaarella.
-      Hoidamme veneesi nostosta ja huollosta kuljetukseen ja säilytykseen.
+      Fagerlund Marine Ab tarjoaa venesäilytystä ja kattavat venepalvelut Kemiönsaarella.
     </p>
 
     <div class="service-grid">
 
       <div class="service-card">
         <h3>Nosto ja vesillelasku</h3>
-        <p>Veneen turvallinen nosto ja vesillelasku osana kokonaispalveluamme.</p>
+        <p>Veneen turvallinen nosto ja vesillelasku.</p>
       </div>
 
       <div class="service-card">
         <h3>Venekuljetus</h3>
-        <p>Luotettava venekuljetus sovittuun kohteeseen ja takaisin.</p>
+        <p>Veneen turvallinen ja sujuva kuljetus.</p>
       </div>
 
       <div class="service-card">
         <h3>Pesu ja puhdistus</h3>
-        <p>Veneen pesu ja puhdistus ennen säilytystä tai uutta veneilykautta.</p>
+        <p>Veneen pesu ja puhdistus ennen säilytystä tai veneilykautta.</p>
       </div>
 
       <div class="service-card">
         <h3>Moottorihuolto</h3>
-        <p>Moottorihuoltoa veneesi toimintavarmuuden ylläpitämiseksi.</p>
+        <p>Moottorihuolto veneen toimintavarmuuden ylläpitämiseksi.</p>
       </div>
 
       <div class="service-card">
         <h3>Korjaukset</h3>
-        <p>Veneiden huolto- ja korjaustyöt tarpeen mukaan.</p>
+        <p>Huolto- ja korjaustyöt tarpeen mukaan.</p>
       </div>
 
       <div class="service-card">
         <h3>Venesäilytys Kemiönsaarella</h3>
-        <p>Turvallista ja helppoa veneiden säilytystä Kemiönsaarella.</p>
+        <p>Turvallinen ja helppo venesäilytys Kemiönsaarella.</p>
       </div>
+
+    </div>
+  </section>
+
+  <section class="quote" id="tarjous">
+    <h2 class="section-title">Pyydä tarjous venesäilytyksestä</h2>
+
+    <p class="section-intro">
+      Täytä tiedot alla, niin valmis sähköposti avautuu Fagerlund Marinelle.
+    </p>
+
+    <div class="quote-box">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="name">Nimi</label>
+          <input id="name" type="text">
+        </div>
+
+        <div class="field">
+          <label for="phone">Puhelinnumero</label>
+          <input id="phone" type="tel">
+        </div>
+
+        <div class="field">
+          <label for="email">Sähköposti</label>
+          <input id="email" type="email">
+        </div>
+
+        <div class="field">
+          <label for="boat">Veneen merkki / malli</label>
+          <input id="boat" type="text">
+        </div>
+
+        <div class="field">
+          <label for="length">Pituus</label>
+          <input id="length" type="text" placeholder="esim. 7,2 m">
+        </div>
+
+        <div class="field">
+          <label for="width">Leveys</label>
+          <input id="width" type="text" placeholder="esim. 2,5 m">
+        </div>
+
+      </div>
+
+      <label>Olen kiinnostunut seuraavista palveluista:</label>
+
+      <div class="checks">
+
+        <label class="check-row">
+          <input
+            type="checkbox"
+            id="storage"
+            value="Venesäilytys"
+            onchange="toggleStorage()"
+          >
+          Venesäilytys
+        </label>
+
+        <div id="storageOptions" class="extra-field">
+          <label>Säilytystapa</label>
+
+          <label class="radio-row">
+            <input type="radio" name="storageType" value="Lämmin säilytys">
+            Lämmin säilytys
+          </label>
+
+          <label class="radio-row">
+            <input type="radio" name="storageType" value="Kylmä säilytys">
+            Kylmä säilytys
+          </label>
+        </div>
+
+        <label class="check-row">
+          <input
+            type="checkbox"
+            id="lifting"
+            value="Nosto ja vesillelasku"
+            onchange="toggleLifting()"
+          >
+          Nosto & vesillelasku
+        </label>
+
+        <div id="liftingOptions" class="extra-field">
+          <label for="location">Missä vene nostetaan?</label>
+          <input id="location" type="text">
+        </div>
+
+        <label class="check-row">
+          <input type="checkbox" value="Pesu ja puhdistus">
+          Pesu ja puhdistus
+        </label>
+
+        <label class="check-row">
+          <input
+            type="checkbox"
+            id="engineService"
+            value="Moottorihuolto"
+            onchange="toggleEngine()"
+          >
+          Moottorihuolto
+        </label>
+
+        <div id="engineOptions" class="extra-field">
+          <label for="engine">Mikä moottori veneessä on?</label>
+          <input
+            id="engine"
+            type="text"
+            placeholder="esim. Yamaha F150, Volvo Penta D4"
+          >
+        </div>
+
+        <label class="check-row">
+          <input type="checkbox" value="Korjaukset">
+          Korjaukset
+        </label>
+
+      </div>
+
+      <div class="field">
+        <label for="message">Lisätiedot</label>
+        <textarea id="message"></textarea>
+      </div>
+
+      <button class="button" onclick="sendQuote()">Lähetä tarjouspyyntö</button>
 
     </div>
   </section>
@@ -374,9 +560,8 @@
     <h2 class="section-title">Yksi yhteyshenkilö koko veneelle</h2>
 
     <p>
-      Fagerlund Marine huolehtii koko ketjusta. Järjestämme veneen noston,
-      kuljetuksen, pesun, moottorihuollon, korjaukset ja säilytyksen
-      Kemiönsaarella sekä vesillelaskun uuden kauden alkaessa.
+      Hoidamme noston, kuljetuksen, pesun, moottorihuollon,
+      korjaukset, säilytyksen ja vesillelaskun.
     </p>
   </section>
 
@@ -384,22 +569,13 @@
     <h2 class="section-title">Fagerlund Marine Ab</h2>
 
     <p>
-      Palvelemme veneilijöitä Kemiönsaarella ja tarjoamme käytännöllisen
-      kokonaisratkaisun veneen hoitoon ja säilytykseen.
-    </p>
-
-    <p>
-      Kun sama toimija huolehtii veneen nostosta, kuljetuksesta, huollosta,
-      korjauksista ja säilytyksestä, veneen omistaminen on helpompaa.
+      Palvelemme veneilijöitä Kemiönsaarella ja tarjoamme sujuvan kokonaisratkaisun
+      veneen huoltoon, kuljetukseen ja säilytykseen.
     </p>
   </section>
 
   <section class="contact" id="yhteystiedot">
     <h2 class="section-title">Ota yhteyttä</h2>
-
-    <p class="section-intro">
-      Kysy venesäilytyksestä tai muista venepalveluista Kemiönsaarella.
-    </p>
 
     <div class="contact-box">
       <p><strong>Fagerlund Marine Ab</strong></p>
@@ -413,6 +589,129 @@
 <footer>
   © 2026 Fagerlund Marine Ab
 </footer>
+
+<script>
+function toggleStorage() {
+  const storage = document.getElementById("storage");
+  const options = document.getElementById("storageOptions");
+
+  if (storage.checked) {
+    options.style.display = "block";
+  } else {
+    options.style.display = "none";
+
+    document.querySelectorAll('input[name="storageType"]').forEach(item => {
+      item.checked = false;
+    });
+  }
+}
+
+function toggleLifting() {
+  const lifting = document.getElementById("lifting");
+  const options = document.getElementById("liftingOptions");
+  const location = document.getElementById("location");
+
+  if (lifting.checked) {
+    options.style.display = "block";
+  } else {
+    options.style.display = "none";
+    location.value = "";
+  }
+}
+
+function toggleEngine() {
+  const engineService = document.getElementById("engineService");
+  const options = document.getElementById("engineOptions");
+  const engine = document.getElementById("engine");
+
+  if (engineService.checked) {
+    options.style.display = "block";
+  } else {
+    options.style.display = "none";
+    engine.value = "";
+  }
+}
+
+function sendQuote() {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const boat = document.getElementById("boat").value;
+  const length = document.getElementById("length").value;
+  const width = document.getElementById("width").value;
+  const message = document.getElementById("message").value;
+
+  const storage = document.getElementById("storage").checked;
+  const lifting = document.getElementById("lifting").checked;
+  const engineService = document.getElementById("engineService").checked;
+
+  const storageChoice =
+    document.querySelector('input[name="storageType"]:checked');
+
+  const storageType =
+    storageChoice ? storageChoice.value : "";
+
+  const location =
+    document.getElementById("location").value;
+
+  const engine =
+    document.getElementById("engine").value;
+
+  const services = Array.from(
+    document.querySelectorAll('.checks input[type="checkbox"]:checked')
+  )
+  .map(item => item.value)
+  .join(", ");
+
+  const subject = "Tarjouspyyntö - venesäilytys";
+
+  let body =
+`Uusi tarjouspyyntö
+
+Nimi: ${name}
+Puhelin: ${phone}
+Sähköposti: ${email}
+
+Vene: ${boat}
+Pituus: ${length}
+Leveys: ${width}
+
+Toivotut palvelut:
+${services}`;
+
+  if (storage) {
+    body += `
+
+Säilytystapa:
+${storageType}`;
+  }
+
+  if (lifting) {
+    body += `
+
+Nostopaikka:
+${location}`;
+  }
+
+  if (engineService) {
+    body += `
+
+Moottori:
+${engine}`;
+  }
+
+  body += `
+
+Lisätiedot:
+${message}`;
+
+  window.location.href =
+    "mailto:kristoffer@fagerlundmarine.fi?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(body);
+}
+</script>
 
 </body>
 </html>
