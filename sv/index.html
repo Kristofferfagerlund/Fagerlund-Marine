@@ -244,17 +244,26 @@
 
     .checks {
       display: grid;
-      gap: 9px;
+      gap: 10px;
       margin-bottom: 22px;
     }
 
-    .checks label {
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-weight: 400;
+      color: #071725;
     }
 
-    .checks input {
+    .check-row input {
       width: auto;
-      margin-right: 8px;
+    }
+
+    .lifting-location {
+      display: none;
+      margin: 0 0 18px 26px;
+      max-width: 500px;
     }
 
     .quote .button {
@@ -310,6 +319,10 @@
       .section-title {
         font-size: 30px;
       }
+
+      .lifting-location {
+        margin-left: 0;
+      }
     }
   </style>
 </head>
@@ -360,6 +373,7 @@
     </p>
 
     <div class="service-grid">
+
       <div class="service-card">
         <h3>Upptagning & sjösättning</h3>
         <p>Säker upptagning och sjösättning av din båt.</p>
@@ -389,6 +403,7 @@
         <h3>Båtförvaring på Kimitoön</h3>
         <p>Trygg och enkel båtförvaring på Kimitoön.</p>
       </div>
+
     </div>
   </section>
 
@@ -402,6 +417,7 @@
     <div class="quote-box">
 
       <div class="form-grid">
+
         <div class="field">
           <label for="name">Namn</label>
           <input id="name" type="text">
@@ -432,28 +448,47 @@
           <input id="width" type="text" placeholder="t.ex. 2,5 m">
         </div>
 
-        <div class="field full">
-          <label for="location">Var finns båten?</label>
-          <input id="location" type="text">
-        </div>
       </div>
 
       <label>Jag är intresserad av:</label>
 
       <div class="checks">
-        <label><input type="checkbox" value="Båtförvaring"> Båtförvaring</label>
-        <label>
-  <input type="checkbox" id="lifting" value="Upptagning och sjösättning" onchange="toggleLiftingLocation()">
-  Upptagning & sjösättning
-</label>
 
-<div id="liftingLocation" style="display:none; margin: 5px 0 12px 26px;">
-  <label for="location">Var ska båten tas upp?</label>
-  <input id="location" type="text">
-</div>
-        <label><input type="checkbox" value="Tvätt och rengöring"> Tvätt & rengöring</label>
-        <label><input type="checkbox" value="Motorservice"> Motorservice</label>
-        <label><input type="checkbox" value="Reparationer"> Reparationer</label>
+        <label class="check-row">
+          <input type="checkbox" value="Båtförvaring">
+          Båtförvaring
+        </label>
+
+        <label class="check-row">
+          <input
+            type="checkbox"
+            id="lifting"
+            value="Upptagning och sjösättning"
+            onchange="toggleLiftingLocation()"
+          >
+          Upptagning & sjösättning
+        </label>
+
+        <div id="liftingLocation" class="lifting-location">
+          <label for="location">Var ska båten tas upp?</label>
+          <input id="location" type="text">
+        </div>
+
+        <label class="check-row">
+          <input type="checkbox" value="Tvätt och rengöring">
+          Tvätt & rengöring
+        </label>
+
+        <label class="check-row">
+          <input type="checkbox" value="Motorservice">
+          Motorservice
+        </label>
+
+        <label class="check-row">
+          <input type="checkbox" value="Reparationer">
+          Reparationer
+        </label>
+
       </div>
 
       <div class="field">
@@ -462,19 +497,22 @@
       </div>
 
       <button class="button" onclick="sendQuote()">Skicka offertförfrågan</button>
+
     </div>
   </section>
 
   <section class="chain">
     <h2 class="section-title">En kontakt för hela båten</h2>
+
     <p>
-      Vi ordnar upptagning, transport, tvätt, motorservice, reparationer,
-      förvaring och sjösättning.
+      Vi ordnar upptagning, transport, tvätt, motorservice,
+      reparationer, förvaring och sjösättning.
     </p>
   </section>
 
   <section class="about" id="om">
     <h2 class="section-title">Fagerlund Marine Ab</h2>
+
     <p>
       Vi betjänar båtägare på Kimitoön och erbjuder en smidig helhetslösning
       för service, transport och båtförvaring.
@@ -497,10 +535,20 @@
   © 2026 Fagerlund Marine Ab
 </footer>
 
-<script>function toggleLiftingLocation() {
-  const checked = document.getElementById("lifting").checked;
-  document.getElementById("liftingLocation").style.display =
-    checked ? "block" : "none";
+<script>
+function toggleLiftingLocation() {
+  const lifting = document.getElementById("lifting");
+  const liftingLocation = document.getElementById("liftingLocation");
+  const location = document.getElementById("location");
+
+  if (lifting.checked) {
+    liftingLocation.style.display = "block";
+  } else {
+    liftingLocation.style.display = "none";
+    location.value = "";
+  }
+}
+
 function sendQuote() {
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
@@ -508,16 +556,20 @@ function sendQuote() {
   const boat = document.getElementById("boat").value;
   const length = document.getElementById("length").value;
   const width = document.getElementById("width").value;
-  const location = document.getElementById("location").value;
   const message = document.getElementById("message").value;
 
+  const lifting = document.getElementById("lifting").checked;
+  const location = document.getElementById("location").value;
+
   const services = Array.from(
-    document.querySelectorAll('.checks input:checked')
-  ).map(item => item.value).join(", ");
+    document.querySelectorAll('.checks input[type="checkbox"]:checked')
+  )
+  .map(item => item.value)
+  .join(", ");
 
   const subject = "Offertförfrågan - båtförvaring";
 
-  const body =
+  let body =
 `Ny offertförfrågan
 
 Namn: ${name}
@@ -527,10 +579,18 @@ E-post: ${email}
 Båt: ${boat}
 Längd: ${length}
 Bredd: ${width}
-Båten finns: ${location}
 
 Önskade tjänster:
-${services}
+${services}`;
+
+  if (lifting) {
+    body += `
+
+Plats för upptagning:
+${location}`;
+  }
+
+  body += `
 
 Övrig information:
 ${message}`;
