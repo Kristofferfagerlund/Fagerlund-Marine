@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Venesäilytys ja venepalvelut Kemiönsaarella | Fagerlund Marine Ab</title>
+
+  <meta name="description" content="Fagerlund Marine Ab tarjoaa venesäilytystä, veneiden nostoja ja vesillelaskuja, venekuljetuksia, moottorihuoltoa, pesua ja korjauksia Kemiönsaarella.">
+
+  <link rel="canonical" href="https://fagerlundmarine.fi/fi/">
+
+  <link rel="alternate" hreflang="fi" href="https://fagerlundmarine.fi/fi/">
+  <link rel="alternate" hreflang="sv" href="https://fagerlundmarine.fi/sv/">
+  <link rel="alternate" hreflang="x-default" href="https://fagerlundmarine.fi/fi/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fagerlund Marine Ab",
+    "url": "https://fagerlundmarine.fi/fi/",
+    "telephone": "+358503220096",
+    "email": "kristoffer@fagerlundmarine.fi",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Kemiönsaari"
+    },
+    "description": "Venesäilytys ja kattavat venepalvelut Kemiönsaarella: nosto, vesillelasku, venekuljetus, pesu, moottorihuolto ja korjaukset."
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17212b;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: #071725;
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      line-height: 1;
+      letter-spacing: 5px;
+      font-weight: 700;
+      font-size: 21px;
+    }
+
+    .logo small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 7px;
+      margin-top: 7px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .languages {
+      display: flex;
+      gap: 8px;
+    }
+
+    .languages a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.45);
+      padding: 6px 9px;
+      font-size: 12px;
+    }
+
+    .languages .active {
+      background: white;
+      color: #071725;
+    }
+
+    .hero {
+      min-height: 92vh;
+      background:
+        linear-gradient(rgba(4,18,30,.54), rgba(4,18,30,.67)),
+        url("../motorbat.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 130px 8% 80px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 720px;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #071725;
+      text-decoration: none;
+      padding: 14px 24px;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #071725;
+    }
+
+    .section-intro {
+      max-width: 750px;
+      margin-bottom: 45px;
+      color: #53606b;
+    }
+
+    .services {
+      background: #f4f5f5;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 32px;
+      min-height: 190px;
+    }
+
+    .service-card h3 {
+      color: #071725;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #5d6770;
+      font-size: 15px;
+    }
+
+    .chain {
+      background: #071725;
+      color: white;
+    }
+
+    .chain .section-title {
+      color: white;
+    }
+
+    .chain p {
+      max-width: 800px;
+      color: #d6dde2;
+      font-size: 18px;
+    }
+
+    .about p {
+      max-width: 850px;
+      margin-bottom: 15px;
+      color: #53606b;
+    }
+
+    .contact {
+      background: #f4f5f5;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 38px;
+      max-width: 700px;
+    }
+
+    .contact-box p {
+      margin: 10px 0;
+    }
+
+    .contact-box a {
+      color: #071725;
+    }
+
+    footer {
+      background: #071725;
+      color: #bbc4ca;
+      text-align: center;
+      padding: 28px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        padding: 14px 5%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .right {
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 16px;
+        letter-spacing: 3px;
+      }
+
+      .logo small {
+        font-size: 8px;
+        letter-spacing: 5px;
+      }
+
+      .hero {
+        min-height: 85vh;
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="/fi/" class="logo">
+    FAGERLUND
+    <small>MARINE</small>
+  </a>
+
+  <div class="right">
+    <nav>
+      <a href="#palvelut">Palvelut</a>
+      <a href="#meista">Meistä</a>
+      <a href="#yhteystiedot">Yhteystiedot</a>
+    </nav>
+
+    <div class="languages">
+      <a href="/fi/" class="active">FI</a>
+      <a href="/sv/">SV</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Veneesi turvallisissa käsissä.</h1>
+
+      <p>
+        Venesäilytys ja venepalvelut Kemiönsaarella. Nostosta ja kuljetuksesta
+        pesuun, moottorihuoltoon, korjauksiin ja säilytykseen – huolehdimme
+        veneestäsi kokonaisvaltaisesti.
+      </p>
+
+      <a class="button" href="#yhteystiedot">Ota yhteyttä</a>
+    </div>
+  </section>
+
+  <section class="services" id="palvelut">
+    <h2 class="section-title">Venepalvelut Kemiönsaarella</h2>
+
+    <p class="section-intro">
+      Fagerlund Marine Ab tarjoaa kattavat venepalvelut Kemiönsaarella.
+      Hoidamme veneesi nostosta ja huollosta kuljetukseen ja säilytykseen.
+    </p>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <h3>Nosto ja vesillelasku</h3>
+        <p>Veneen turvallinen nosto ja vesillelasku osana kokonaispalveluamme.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Venekuljetus</h3>
+        <p>Luotettava venekuljetus sovittuun kohteeseen ja takaisin.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Pesu ja puhdistus</h3>
+        <p>Veneen pesu ja puhdistus ennen säilytystä tai uutta veneilykautta.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Moottorihuolto</h3>
+        <p>Moottorihuoltoa veneesi toimintavarmuuden ylläpitämiseksi.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Korjaukset</h3>
+        <p>Veneiden huolto- ja korjaustyöt tarpeen mukaan.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Venesäilytys Kemiönsaarella</h3>
+        <p>Turvallista ja helppoa veneiden säilytystä Kemiönsaarella.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="chain">
+    <h2 class="section-title">Yksi yhteyshenkilö koko veneelle</h2>
+
+    <p>
+      Fagerlund Marine huolehtii koko ketjusta. Järjestämme veneen noston,
+      kuljetuksen, pesun, moottorihuollon, korjaukset ja säilytyksen
+      Kemiönsaarella sekä vesillelaskun uuden kauden alkaessa.
+    </p>
+  </section>
+
+  <section class="about" id="meista">
+    <h2 class="section-title">Fagerlund Marine Ab</h2>
+
+    <p>
+      Palvelemme veneilijöitä Kemiönsaarella ja tarjoamme käytännöllisen
+      kokonaisratkaisun veneen hoitoon ja säilytykseen.
+    </p>
+
+    <p>
+      Kun sama toimija huolehtii veneen nostosta, kuljetuksesta, huollosta,
+      korjauksista ja säilytyksestä, veneen omistaminen on helpompaa.
+    </p>
+  </section>
+
+  <section class="contact" id="yhteystiedot">
+    <h2 class="section-title">Ota yhteyttä</h2>
+
+    <p class="section-intro">
+      Kysy venesäilytyksestä tai muista venepalveluista Kemiönsaarella.
+    </p>
+
+    <div class="contact-box">
+      <p><strong>Fagerlund Marine Ab</strong></p>
+      <p>Puhelin: <a href="tel:+358503220096">+358 50 322 0096</a></p>
+      <p>Sähköposti: <a href="mailto:kristoffer@fagerlundmarine.fi">kristoffer@fagerlundmarine.fi</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Fagerlund Marine Ab
+</footer>
+
+</body>
+</html>
