@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Båtförvaring & båtservice på Kimitoön | Fagerlund Marine Ab</title>
+
+  <meta name="description" content="Fagerlund Marine Ab erbjuder båtförvaring, upptagning, sjösättning, båttransport, motorservice, tvätt och reparationer på Kimitoön.">
+
+  <link rel="canonical" href="https://fagerlundmarine.fi/sv/">
+
+  <link rel="alternate" hreflang="fi" href="https://fagerlundmarine.fi/fi/">
+  <link rel="alternate" hreflang="sv" href="https://fagerlundmarine.fi/sv/">
+  <link rel="alternate" hreflang="x-default" href="https://fagerlundmarine.fi/fi/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Fagerlund Marine Ab",
+    "url": "https://fagerlundmarine.fi/sv/",
+    "telephone": "+358503220096",
+    "email": "kristoffer@fagerlundmarine.fi",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Kimitoön"
+    },
+    "description": "Båtförvaring och kompletta båttjänster på Kimitoön: upptagning, sjösättning, transport, tvätt, motorservice och reparationer."
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17212b;
+      background: white;
+      line-height: 1.6;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: #071725;
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      line-height: 1;
+      letter-spacing: 5px;
+      font-weight: 700;
+      font-size: 21px;
+    }
+
+    .logo small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 7px;
+      margin-top: 7px;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .languages {
+      display: flex;
+      gap: 8px;
+    }
+
+    .languages a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.45);
+      padding: 6px 9px;
+      font-size: 12px;
+    }
+
+    .languages .active {
+      background: white;
+      color: #071725;
+    }
+
+    .hero {
+      min-height: 92vh;
+      background:
+        linear-gradient(rgba(4,18,30,.54), rgba(4,18,30,.67)),
+        url("../motorbat.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 130px 8% 80px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 720px;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #071725;
+      text-decoration: none;
+      padding: 14px 24px;
+      font-weight: 600;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #071725;
+    }
+
+    .section-intro {
+      max-width: 750px;
+      margin-bottom: 45px;
+      color: #53606b;
+    }
+
+    .services {
+      background: #f4f5f5;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 32px;
+      min-height: 190px;
+    }
+
+    .service-card h3 {
+      color: #071725;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #5d6770;
+      font-size: 15px;
+    }
+
+    .chain {
+      background: #071725;
+      color: white;
+    }
+
+    .chain .section-title {
+      color: white;
+    }
+
+    .chain p {
+      max-width: 800px;
+      color: #d6dde2;
+      font-size: 18px;
+    }
+
+    .about p {
+      max-width: 850px;
+      margin-bottom: 15px;
+      color: #53606b;
+    }
+
+    .contact {
+      background: #f4f5f5;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 38px;
+      max-width: 700px;
+    }
+
+    .contact-box p {
+      margin: 10px 0;
+    }
+
+    .contact-box a {
+      color: #071725;
+    }
+
+    footer {
+      background: #071725;
+      color: #bbc4ca;
+      text-align: center;
+      padding: 28px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        padding: 14px 5%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .right {
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 16px;
+        letter-spacing: 3px;
+      }
+
+      .logo small {
+        font-size: 8px;
+        letter-spacing: 5px;
+      }
+
+      .hero {
+        min-height: 85vh;
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="/sv/" class="logo">
+    FAGERLUND
+    <small>MARINE</small>
+  </a>
+
+  <div class="right">
+    <nav>
+      <a href="#tjanster">Tjänster</a>
+      <a href="#om">Om oss</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="languages">
+      <a href="/fi/">FI</a>
+      <a href="/sv/" class="active">SV</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Din båt i trygga händer.</h1>
+
+      <p>
+        Båtförvaring och båtservice på Kimitoön. Från upptagning och transport
+        till tvätt, motorservice, reparationer och förvaring – vi tar hand om
+        hela båten.
+      </p>
+
+      <a class="button" href="#kontakt">Kontakta oss</a>
+    </div>
+  </section>
+
+  <section class="services" id="tjanster">
+    <h2 class="section-title">Båtservice på Kimitoön</h2>
+
+    <p class="section-intro">
+      Fagerlund Marine Ab erbjuder båtförvaring och kompletta båttjänster
+      på Kimitoön. Vi tar hand om båten från upptagning och service till
+      transport, förvaring och sjösättning.
+    </p>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <h3>Upptagning & sjösättning</h3>
+        <p>Säker upptagning och sjösättning av din båt som en del av vår helhetsservice.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Båttransport</h3>
+        <p>Trygg och smidig transport av båten till överenskommen plats.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Tvätt & rengöring</h3>
+        <p>Tvätt och rengöring av båten inför förvaring eller en ny båtsäsong.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Motorservice</h3>
+        <p>Motorservice för att hålla din båt driftsäker och redo för nästa säsong.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Reparationer</h3>
+        <p>Service- och reparationsarbeten för båtar efter behov.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Båtförvaring på Kimitoön</h3>
+        <p>Trygg och enkel båtförvaring på Kimitoön.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="chain">
+    <h2 class="section-title">En kontakt för hela båten</h2>
+
+    <p>
+      Fagerlund Marine tar hand om hela kedjan. Vi ordnar upptagning,
+      transport, tvätt, motorservice, reparationer och båtförvaring på
+      Kimitoön samt sjösättning när nästa säsong börjar.
+    </p>
+  </section>
+
+  <section class="about" id="om">
+    <h2 class="section-title">Fagerlund Marine Ab</h2>
+
+    <p>
+      Vi betjänar båtägare på Kimitoön och erbjuder en smidig helhetslösning
+      för service, transport och båtförvaring.
+    </p>
+
+    <p>
+      När samma företag tar hand om upptagning, transport, service,
+      reparationer och förvaring blir båtägandet enklare.
+    </p>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <h2 class="section-title">Kontakta oss</h2>
+
+    <p class="section-intro">
+      Fråga oss om båtförvaring eller andra båttjänster på Kimitoön.
+    </p>
+
+    <div class="contact-box">
+      <p><strong>Fagerlund Marine Ab</strong></p>
+      <p>Telefon: <a href="tel:+358503220096">+358 50 322 0096</a></p>
+      <p>E-post: <a href="mailto:kristoffer@fagerlundmarine.fi">kristoffer@fagerlundmarine.fi</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Fagerlund Marine Ab
+</footer>
+
+</body>
+</html>
