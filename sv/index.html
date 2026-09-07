@@ -38,10 +38,11 @@
       width: 100%;
       z-index: 1000;
       background: #071725;
-      padding: 15px 6%;
+      padding: 13px 4%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
     }
 
     .logo {
@@ -51,6 +52,7 @@
       letter-spacing: 5px;
       font-weight: 700;
       font-size: 21px;
+      white-space: nowrap;
     }
 
     .logo small {
@@ -62,7 +64,7 @@
       font-weight: 400;
     }
 
-    .right {
+    .header-center {
       display: flex;
       align-items: center;
       gap: 28px;
@@ -70,13 +72,36 @@
 
     nav {
       display: flex;
-      gap: 28px;
+      gap: 24px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .top-contact {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .top-contact a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .top-contact a:hover,
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    .mobile-contact {
+      display: none;
     }
 
     .languages {
@@ -307,9 +332,41 @@
       font-size: 13px;
     }
 
+    @media (max-width: 1200px) {
+      .top-contact {
+        display: none;
+      }
+    }
+
     @media (max-width: 850px) {
+      header {
+        padding: 12px 5%;
+      }
+
       nav {
         display: none;
+      }
+
+      .header-center {
+        margin-left: auto;
+        gap: 12px;
+      }
+
+      .mobile-contact {
+        display: flex;
+        gap: 12px;
+      }
+
+      .mobile-contact a {
+        color: white;
+        text-decoration: none;
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .mobile-contact span {
+        display: block;
+        font-size: 11px;
       }
 
       .service-grid,
@@ -333,6 +390,26 @@
       .extra-field {
         margin-left: 0;
       }
+
+      .logo {
+        font-size: 17px;
+        letter-spacing: 4px;
+      }
+
+      .logo small {
+        font-size: 8px;
+        letter-spacing: 6px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .mobile-contact span {
+        display: none;
+      }
+
+      .languages a {
+        padding: 5px 7px;
+      }
     }
   </style>
 </head>
@@ -345,13 +422,23 @@
     <small>MARINE</small>
   </a>
 
-  <div class="right">
+  <div class="header-center">
     <nav>
       <a href="#tjanster">Tjänster</a>
       <a href="#offert">Begär offert</a>
       <a href="#om">Om oss</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
+
+    <div class="top-contact">
+      <a href="tel:+358503220096">☎ +358 50 322 0096</a>
+      <a href="mailto:kristoffer@fagerlundmarine.fi">✉ kristoffer@fagerlundmarine.fi</a>
+    </div>
+
+    <div class="mobile-contact">
+      <a href="tel:+358503220096">☎<span>Ring</span></a>
+      <a href="mailto:kristoffer@fagerlundmarine.fi">✉<span>E-post</span></a>
+    </div>
 
     <div class="languages">
       <a href="/fi/">FI</a>
@@ -383,7 +470,6 @@
     </p>
 
     <div class="service-grid">
-
       <div class="service-card">
         <h3>Upptagning & sjösättning</h3>
         <p>Säker upptagning och sjösättning av din båt.</p>
@@ -411,9 +497,8 @@
 
       <div class="service-card">
         <h3>Båtförvaring på Kimitoön</h3>
-        <p>Trygg och enkel båtförvaring på Kimitoön.</p>
+        <p>Trygg båtförvaring med möjlighet till varm eller kall förvaring.</p>
       </div>
-
     </div>
   </section>
 
@@ -425,7 +510,6 @@
     </p>
 
     <div class="quote-box">
-
       <div class="form-grid">
 
         <div class="field">
@@ -520,11 +604,7 @@
 
         <div id="engineOptions" class="extra-field">
           <label for="engine">Vilken motor har båten?</label>
-          <input
-            id="engine"
-            type="text"
-            placeholder="t.ex. Yamaha F150, Volvo Penta D4"
-          >
+          <input id="engine" type="text" placeholder="t.ex. Yamaha F150, Volvo Penta D4">
         </div>
 
         <label class="check-row">
@@ -540,7 +620,6 @@
       </div>
 
       <button class="button" onclick="sendQuote()">Skicka offertförfrågan</button>
-
     </div>
   </section>
 
@@ -633,17 +712,11 @@ function sendQuote() {
   const lifting = document.getElementById("lifting").checked;
   const engineService = document.getElementById("engineService").checked;
 
-  const storageChoice =
-    document.querySelector('input[name="storageType"]:checked');
+  const storageChoice = document.querySelector('input[name="storageType"]:checked');
+  const storageType = storageChoice ? storageChoice.value : "";
 
-  const storageType =
-    storageChoice ? storageChoice.value : "";
-
-  const location =
-    document.getElementById("location").value;
-
-  const engine =
-    document.getElementById("engine").value;
+  const location = document.getElementById("location").value;
+  const engine = document.getElementById("engine").value;
 
   const services = Array.from(
     document.querySelectorAll('.checks input[type="checkbox"]:checked')
