@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Venesäilytys ja venepalvelut Kemiönsaarella | Fagerlund Marine Ab</title>
+  <title>Venesäilytys Kemiö & Kemiönsaari | Fagerlund Marine Ab</title>
 
-  <meta name="description" content="Fagerlund Marine Ab tarjoaa venesäilytystä, veneiden nostoja ja vesillelaskuja, venekuljetuksia, moottorihuoltoa, pesua ja korjauksia Kemiönsaarella.">
+  <meta name="description" content="Venesäilytys Kemiössä ja Kemiönsaarella. Lämmin ja kylmä veneiden säilytys, talvisäilytys, nosto, vesillelasku, venekuljetus, pesu, moottorihuolto ja korjaukset. Fagerlund Marine Ab.">
 
   <link rel="canonical" href="https://fagerlundmarine.fi/fi/">
+
   <link rel="alternate" hreflang="fi" href="https://fagerlundmarine.fi/fi/">
   <link rel="alternate" hreflang="sv" href="https://fagerlundmarine.fi/sv/">
   <link rel="alternate" hreflang="x-default" href="https://fagerlundmarine.fi/fi/">
@@ -26,7 +27,7 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: #17212b;
+      color: #18232c;
       background: white;
       line-height: 1.6;
     }
@@ -48,20 +49,20 @@
     .logo {
       color: white;
       text-decoration: none;
-      line-height: 1;
-      letter-spacing: 5px;
+      font-size: 20px;
       font-weight: 700;
-      font-size: 21px;
+      letter-spacing: 5px;
+      line-height: 1.1;
       white-space: nowrap;
     }
 
     .logo small {
       display: block;
-      font-size: 10px;
-      letter-spacing: 7px;
-      margin-top: 7px;
       text-align: center;
+      font-size: 9px;
       font-weight: 400;
+      letter-spacing: 7px;
+      margin-top: 4px;
     }
 
     .header-center {
@@ -72,14 +73,19 @@
 
     nav {
       display: flex;
-      gap: 24px;
+      align-items: center;
+      gap: 22px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
       white-space: nowrap;
+    }
+
+    nav a:hover {
+      opacity: 0.75;
     }
 
     .top-contact {
@@ -95,190 +101,188 @@
       white-space: nowrap;
     }
 
-    .top-contact a:hover,
-    nav a:hover {
-      opacity: 0.8;
-    }
-
     .mobile-contact {
       display: none;
     }
 
     .languages {
       display: flex;
-      gap: 8px;
+      gap: 5px;
     }
 
     .languages a {
       color: white;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,.45);
-      padding: 6px 9px;
-      font-size: 12px;
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 5px 8px;
+      font-size: 11px;
     }
 
-    .languages .active {
+    .languages a.active {
       background: white;
       color: #071725;
     }
 
     .hero {
-      min-height: 92vh;
-      background:
-        linear-gradient(rgba(4,18,30,.54), rgba(4,18,30,.67)),
-        url("../motorbat.jpg") center/cover no-repeat;
+      min-height: 680px;
+      padding: 150px 8% 90px;
       display: flex;
       align-items: center;
-      padding: 130px 8% 80px;
       color: white;
+      background:
+        linear-gradient(rgba(7,23,37,0.60), rgba(7,23,37,0.72)),
+        url("../motorbat.jpg") center center / cover no-repeat;
     }
 
     .hero-content {
-      max-width: 800px;
+      max-width: 720px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 1.05;
-      margin-bottom: 25px;
-      font-weight: 600;
+      font-size: 52px;
+      line-height: 1.08;
+      margin-bottom: 22px;
+      font-weight: 700;
     }
 
     .hero p {
+      max-width: 680px;
       font-size: 19px;
-      max-width: 720px;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
     .button {
       display: inline-block;
+      padding: 14px 24px;
       background: white;
       color: #071725;
       text-decoration: none;
-      padding: 14px 24px;
-      font-weight: 600;
-      border: 0;
+      font-weight: 700;
+      border: none;
       cursor: pointer;
+      font-size: 15px;
     }
 
-    section {
-      padding: 90px 8%;
+    .section {
+      padding: 80px 8%;
     }
 
     .section-title {
-      font-size: 36px;
-      margin-bottom: 15px;
+      text-align: center;
       color: #071725;
+      font-size: 32px;
+      margin-bottom: 14px;
     }
 
     .section-intro {
-      max-width: 750px;
-      margin-bottom: 45px;
-      color: #53606b;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 45px;
+      color: #53606a;
     }
 
-    .services,
-    .quote,
-    .contact {
+    .services {
       background: #f4f5f5;
     }
 
     .service-grid {
+      max-width: 1100px;
+      margin: auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
     .service-card {
       background: white;
-      padding: 32px;
-      min-height: 190px;
+      padding: 28px;
+      min-height: 170px;
     }
 
     .service-card h3 {
       color: #071725;
-      font-size: 20px;
-      margin-bottom: 12px;
+      font-size: 19px;
+      margin-bottom: 10px;
     }
 
     .service-card p {
-      color: #5d6770;
+      color: #59656e;
       font-size: 15px;
     }
 
     .chain {
       background: #071725;
       color: white;
+      text-align: center;
+      padding: 75px 8%;
     }
 
-    .chain .section-title {
-      color: white;
+    .chain h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
     }
 
     .chain p {
       max-width: 800px;
-      color: #d6dde2;
+      margin: auto;
       font-size: 18px;
     }
 
-    .about p {
-      max-width: 850px;
-      margin-bottom: 15px;
-      color: #53606b;
+    .quote {
+      background: #f4f5f5;
     }
 
     .quote-box {
-      max-width: 850px;
+      max-width: 760px;
+      margin: auto;
       background: white;
       padding: 38px;
     }
 
-    .form-grid {
+    .quote-box label {
+      display: block;
+      color: #071725;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .quote-box input,
+    .quote-box textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cdd2d5;
+      font-family: inherit;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .quote-box textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .two-columns {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
 
-    .field {
-      margin-bottom: 18px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      color: #071725;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #c9cfd4;
-      font: inherit;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
     .checks {
-      display: grid;
-      gap: 10px;
-      margin-bottom: 22px;
+      margin: 8px 0 20px;
     }
 
-    .check-row {
+    .checks > label {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
       font-weight: 400;
-      color: #071725;
+      margin-bottom: 9px;
     }
 
-    .check-row input {
+    .checks input[type="checkbox"] {
       width: auto;
+      margin: 0;
     }
 
     .extra-field {
@@ -303,21 +307,35 @@
 
     .radio-row input {
       width: auto;
+      margin: 0;
     }
 
-    .quote .button {
-      background: #071725;
-      color: white;
+    .about {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about p {
+      color: #53606a;
+      font-size: 17px;
+    }
+
+    .contact {
+      padding: 80px 8%;
+      background: #f4f5f5;
     }
 
     .contact-box {
-      background: white;
-      padding: 38px;
       max-width: 700px;
+      margin: 30px auto 0;
+      background: white;
+      padding: 32px;
+      text-align: center;
     }
 
     .contact-box p {
-      margin: 10px 0;
+      margin: 7px 0;
     }
 
     .contact-box a {
@@ -326,9 +344,9 @@
 
     footer {
       background: #071725;
-      color: #bbc4ca;
+      color: rgba(255,255,255,0.7);
       text-align: center;
-      padding: 28px;
+      padding: 24px;
       font-size: 13px;
     }
 
@@ -369,28 +387,6 @@
         font-size: 11px;
       }
 
-      .service-grid,
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 65px 6%;
-      }
-
-      .hero {
-        padding-left: 6%;
-        padding-right: 6%;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      .extra-field {
-        margin-left: 0;
-      }
-
       .logo {
         font-size: 17px;
         letter-spacing: 4px;
@@ -399,6 +395,40 @@
       .logo small {
         font-size: 8px;
         letter-spacing: 6px;
+      }
+
+      .hero {
+        min-height: 600px;
+        padding: 130px 7% 70px;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 65px 6%;
+      }
+
+      .quote-box {
+        padding: 25px;
+      }
+
+      .two-columns {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .extra-field {
+        margin-left: 0;
       }
     }
 
@@ -409,6 +439,15 @@
 
       .languages a {
         padding: 5px 7px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .section-title,
+      .chain h2 {
+        font-size: 27px;
       }
     }
   </style>
@@ -446,286 +485,356 @@
   </div>
 </header>
 
-<main>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Veneesi turvallisissa käsissä.</h1>
-
-      <p>
-        Venesäilytys ja venepalvelut Kemiönsaarella. Nostosta ja kuljetuksesta
-        pesuun, moottorihuoltoon, korjauksiin ja säilytykseen – huolehdimme koko veneestä.
-      </p>
-
-      <a class="button" href="#tarjous">Pyydä tarjous venesäilytyksestä</a>
-    </div>
-  </section>
-
-  <section class="services" id="palvelut">
-    <h2 class="section-title">Venepalvelut Kemiönsaarella</h2>
-
-    <p class="section-intro">
-      Fagerlund Marine Ab tarjoaa venesäilytystä ja kattavat venepalvelut Kemiönsaarella.
-    </p>
-
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>Nosto ja vesillelasku</h3>
-        <p>Veneen turvallinen nosto ja vesillelasku.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Venekuljetus</h3>
-        <p>Veneen turvallinen ja sujuva kuljetus.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Pesu ja puhdistus</h3>
-        <p>Veneen pesu ja puhdistus ennen säilytystä tai veneilykautta.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Moottorihuolto</h3>
-        <p>Moottorihuolto veneen toimintavarmuuden ylläpitämiseksi.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Korjaukset</h3>
-        <p>Huolto- ja korjaustyöt tarpeen mukaan.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Venesäilytys Kemiönsaarella</h3>
-        <p>Turvallinen venesäilytys, lämmin tai kylmä säilytys.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="quote" id="tarjous">
-    <h2 class="section-title">Pyydä tarjous venesäilytyksestä</h2>
-
-    <p class="section-intro">
-      Täytä tiedot alla, niin valmis sähköposti avautuu Fagerlund Marinelle.
-    </p>
-
-    <div class="quote-box">
-      <div class="form-grid">
-
-        <div class="field">
-          <label for="name">Nimi</label>
-          <input id="name" type="text">
-        </div>
-
-        <div class="field">
-          <label for="phone">Puhelinnumero</label>
-          <input id="phone" type="tel">
-        </div>
-
-        <div class="field">
-          <label for="email">Sähköposti</label>
-          <input id="email" type="email">
-        </div>
-
-        <div class="field">
-          <label for="boat">Veneen merkki / malli</label>
-          <input id="boat" type="text">
-        </div>
-
-        <div class="field">
-          <label for="length">Pituus</label>
-          <input id="length" type="text" placeholder="esim. 7,2 m">
-        </div>
-
-        <div class="field">
-          <label for="width">Leveys</label>
-          <input id="width" type="text" placeholder="esim. 2,5 m">
-        </div>
-
-      </div>
-
-      <label>Olen kiinnostunut seuraavista palveluista:</label>
-
-      <div class="checks">
-
-        <label class="check-row">
-          <input
-            type="checkbox"
-            id="storage"
-            value="Venesäilytys"
-            onchange="toggleStorage()"
-          >
-          Venesäilytys
-        </label>
-
-        <div id="storageOptions" class="extra-field">
-          <label>Säilytystapa</label>
-
-          <label class="radio-row">
-            <input type="radio" name="storageType" value="Lämmin säilytys">
-            Lämmin säilytys
-          </label>
-
-          <label class="radio-row">
-            <input type="radio" name="storageType" value="Kylmä säilytys">
-            Kylmä säilytys
-          </label>
-        </div>
-
-        <label class="check-row">
-          <input
-            type="checkbox"
-            id="lifting"
-            value="Nosto ja vesillelasku"
-            onchange="toggleLifting()"
-          >
-          Nosto & vesillelasku
-        </label>
-
-        <div id="liftingOptions" class="extra-field">
-          <label for="location">Missä vene nostetaan?</label>
-          <input id="location" type="text">
-        </div>
-
-        <label class="check-row">
-          <input type="checkbox" value="Pesu ja puhdistus">
-          Pesu ja puhdistus
-        </label>
-
-        <label class="check-row">
-          <input
-            type="checkbox"
-            id="engineService"
-            value="Moottorihuolto"
-            onchange="toggleEngine()"
-          >
-          Moottorihuolto
-        </label>
-
-        <div id="engineOptions" class="extra-field">
-          <label for="engine">Mikä moottori veneessä on?</label>
-          <input id="engine" type="text" placeholder="esim. Yamaha F150, Volvo Penta D4">
-        </div>
-
-        <label class="check-row">
-          <input type="checkbox" value="Korjaukset">
-          Korjaukset
-        </label>
-
-      </div>
-
-      <div class="field">
-        <label for="message">Lisätiedot</label>
-        <textarea id="message"></textarea>
-      </div>
-
-      <button class="button" onclick="sendQuote()">Lähetä tarjouspyyntö</button>
-    </div>
-  </section>
-
-  <section class="chain">
-    <h2 class="section-title">Yksi yhteyshenkilö koko veneelle</h2>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Veneesi turvallisissa käsissä.</h1>
 
     <p>
-      Hoidamme noston, kuljetuksen, pesun, moottorihuollon,
-      korjaukset, säilytyksen ja vesillelaskun.
+      Venesäilytys ja venepalvelut Kemiössä ja Kemiönsaarella.
+      Nostosta ja kuljetuksesta pesuun, moottorihuoltoon,
+      korjauksiin ja säilytykseen – huolehdimme koko veneestä.
     </p>
-  </section>
 
-  <section class="about" id="meista">
+    <a href="#tarjous" class="button">Pyydä tarjous venesäilytyksestä</a>
+  </div>
+</section>
+
+
+<section class="section services" id="palvelut">
+  <h2 class="section-title">Venesäilytys ja venepalvelut Kemiönsaarella</h2>
+
+  <p class="section-intro">
+    Fagerlund Marine Ab tarjoaa veneilijöille kattavan palvelun
+    Kemiössä ja Kemiönsaarella. Hoidamme veneen noston,
+    kuljetuksen, pesun, moottorihuollon, korjaukset,
+    säilytyksen ja vesillelaskun.
+  </p>
+
+  <div class="service-grid">
+
+    <div class="service-card">
+      <h3>Nosto ja vesillelasku</h3>
+      <p>
+        Veneen turvallinen nosto ja vesillelasku osana
+        kokonaispalveluamme.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Venekuljetus</h3>
+      <p>
+        Järjestämme veneen kuljetuksen tarvittaessa
+        nostopaikalta säilytykseen ja takaisin.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Pesu ja puhdistus</h3>
+      <p>
+        Veneen pesu ja puhdistus ennen säilytystä
+        tai muun huollon yhteydessä.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Moottorihuolto</h3>
+      <p>
+        Veneen moottorihuolto osana Fagerlund Marinen
+        kokonaisvaltaista venepalvelua.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Korjaukset</h3>
+      <p>
+        Veneiden korjaukset ja tarvittavat huoltotyöt
+        sovitaan veneen ja asiakkaan tarpeiden mukaan.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Venesäilytys Kemiössä ja Kemiönsaarella</h3>
+      <p>
+        Turvallinen veneiden säilytys ja talvisäilytys
+        Kemiönsaarella. Saatavilla lämmin tai kylmä venesäilytys.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="chain">
+  <h2>Yksi yhteyshenkilö koko veneelle</h2>
+
+  <p>
+    Huolehdimme koko palveluketjusta: veneen nosto,
+    venekuljetus, pesu, moottorihuolto, korjaukset,
+    venesäilytys ja vesillelasku.
+  </p>
+</section>
+
+
+<section class="section quote" id="tarjous">
+  <h2 class="section-title">Pyydä tarjous</h2>
+
+  <p class="section-intro">
+    Kerro veneestäsi ja tarvitsemistasi palveluista.
+    Ota yhteyttä ja pyydä tarjous venesäilytyksestä tai muista venepalveluista.
+  </p>
+
+  <div class="quote-box">
+
+    <label for="name">Nimi</label>
+    <input type="text" id="name">
+
+    <div class="two-columns">
+      <div>
+        <label for="phone">Puhelinnumero</label>
+        <input type="tel" id="phone">
+      </div>
+
+      <div>
+        <label for="email">Sähköposti</label>
+        <input type="email" id="email">
+      </div>
+    </div>
+
+    <label for="boat">Veneen merkki / malli</label>
+    <input type="text" id="boat">
+
+    <div class="two-columns">
+      <div>
+        <label for="length">Pituus</label>
+        <input type="text" id="length" placeholder="esim. 7,2 m">
+      </div>
+
+      <div>
+        <label for="width">Leveys</label>
+        <input type="text" id="width" placeholder="esim. 2,5 m">
+      </div>
+    </div>
+
+    <label>Toivotut palvelut</label>
+
+    <div class="checks">
+
+      <label>
+        <input
+          type="checkbox"
+          id="storage"
+          value="Venesäilytys"
+          onchange="toggleStorage()"
+        >
+        Venesäilytys
+      </label>
+
+      <div class="extra-field" id="storageOptions">
+        <label>Säilytystapa</label>
+
+        <label class="radio-row">
+          <input type="radio" name="storageType" value="Lämmin säilytys">
+          Lämmin säilytys
+        </label>
+
+        <label class="radio-row">
+          <input type="radio" name="storageType" value="Kylmä säilytys">
+          Kylmä säilytys
+        </label>
+      </div>
+
+
+      <label>
+        <input
+          type="checkbox"
+          id="lifting"
+          value="Nosto & vesillelasku"
+          onchange="toggleLifting()"
+        >
+        Nosto & vesillelasku
+      </label>
+
+      <div class="extra-field" id="liftingOptions">
+        <label for="location">Missä vene nostetaan?</label>
+        <input type="text" id="location">
+      </div>
+
+
+      <label>
+        <input
+          type="checkbox"
+          value="Pesu ja puhdistus"
+        >
+        Pesu ja puhdistus
+      </label>
+
+
+      <label>
+        <input
+          type="checkbox"
+          id="engineService"
+          value="Moottorihuolto"
+          onchange="toggleEngine()"
+        >
+        Moottorihuolto
+      </label>
+
+      <div class="extra-field" id="engineOptions">
+        <label for="engine">Mikä moottori veneessä on?</label>
+        <input
+          type="text"
+          id="engine"
+          placeholder="esim. Yamaha F150, Volvo Penta D4"
+        >
+      </div>
+
+
+      <label>
+        <input
+          type="checkbox"
+          value="Korjaukset"
+        >
+        Korjaukset
+      </label>
+
+    </div>
+
+
+    <label for="message">Lisätiedot</label>
+    <textarea
+      id="message"
+      placeholder="Kerro tarvittaessa lisää veneestä tai tarvitsemistasi palveluista."
+    ></textarea>
+
+    <button type="button" class="button" onclick="sendQuote()">
+      Lähetä tarjouspyyntö
+    </button>
+
+  </div>
+</section>
+
+
+<section class="section" id="meista">
+  <div class="about">
     <h2 class="section-title">Fagerlund Marine Ab</h2>
 
     <p>
-      Palvelemme veneilijöitä Kemiönsaarella ja tarjoamme sujuvan kokonaisratkaisun
-      veneen huoltoon, kuljetukseen ja säilytykseen.
+      Fagerlund Marine Ab tarjoaa venesäilytystä ja venepalveluita
+      Kemiössä ja Kemiönsaarella. Palveluihimme kuuluvat veneiden
+      säilytys ja talvisäilytys, veneen nosto ja vesillelasku,
+      venekuljetus, pesu, moottorihuolto ja korjaukset.
+      Saat meiltä veneellesi koko palveluketjun yhdestä paikasta.
     </p>
-  </section>
+  </div>
+</section>
 
-  <section class="contact" id="yhteystiedot">
-    <h2 class="section-title">Ota yhteyttä</h2>
 
-    <div class="contact-box">
-      <p><strong>Fagerlund Marine Ab</strong></p>
-      <p>Puhelin: <a href="tel:+358503220096">+358 50 322 0096</a></p>
-      <p>Sähköposti: <a href="mailto:kristoffer@fagerlundmarine.fi">kristoffer@fagerlundmarine.fi</a></p>
-    </div>
-  </section>
+<section class="contact" id="yhteystiedot">
+  <h2 class="section-title">Ota yhteyttä</h2>
 
-</main>
+  <div class="contact-box">
+    <p><strong>Fagerlund Marine Ab</strong></p>
+
+    <p>
+      Puhelin:
+      <a href="tel:+358503220096">+358 50 322 0096</a>
+    </p>
+
+    <p>
+      Sähköposti:
+      <a href="mailto:kristoffer@fagerlundmarine.fi">
+        kristoffer@fagerlundmarine.fi
+      </a>
+    </p>
+  </div>
+</section>
+
 
 <footer>
-  © 2026 Fagerlund Marine Ab
+  © Fagerlund Marine Ab
 </footer>
 
+
 <script>
-function toggleStorage() {
-  const storage = document.getElementById("storage");
-  const options = document.getElementById("storageOptions");
+  function toggleStorage() {
+    const storage = document.getElementById("storage");
+    const options = document.getElementById("storageOptions");
 
-  if (storage.checked) {
-    options.style.display = "block";
-  } else {
-    options.style.display = "none";
+    if (storage.checked) {
+      options.style.display = "block";
+    } else {
+      options.style.display = "none";
 
-    document.querySelectorAll('input[name="storageType"]').forEach(item => {
-      item.checked = false;
-    });
+      document.querySelectorAll('input[name="storageType"]').forEach(item => {
+        item.checked = false;
+      });
+    }
   }
-}
 
-function toggleLifting() {
-  const lifting = document.getElementById("lifting");
-  const options = document.getElementById("liftingOptions");
-  const location = document.getElementById("location");
 
-  if (lifting.checked) {
-    options.style.display = "block";
-  } else {
-    options.style.display = "none";
-    location.value = "";
+  function toggleLifting() {
+    const lifting = document.getElementById("lifting");
+    const options = document.getElementById("liftingOptions");
+    const location = document.getElementById("location");
+
+    if (lifting.checked) {
+      options.style.display = "block";
+    } else {
+      options.style.display = "none";
+      location.value = "";
+    }
   }
-}
 
-function toggleEngine() {
-  const engineService = document.getElementById("engineService");
-  const options = document.getElementById("engineOptions");
-  const engine = document.getElementById("engine");
 
-  if (engineService.checked) {
-    options.style.display = "block";
-  } else {
-    options.style.display = "none";
-    engine.value = "";
+  function toggleEngine() {
+    const engineService = document.getElementById("engineService");
+    const options = document.getElementById("engineOptions");
+    const engine = document.getElementById("engine");
+
+    if (engineService.checked) {
+      options.style.display = "block";
+    } else {
+      options.style.display = "none";
+      engine.value = "";
+    }
   }
-}
 
-function sendQuote() {
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const email = document.getElementById("email").value;
-  const boat = document.getElementById("boat").value;
-  const length = document.getElementById("length").value;
-  const width = document.getElementById("width").value;
-  const message = document.getElementById("message").value;
 
-  const storage = document.getElementById("storage").checked;
-  const lifting = document.getElementById("lifting").checked;
-  const engineService = document.getElementById("engineService").checked;
+  function sendQuote() {
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const boat = document.getElementById("boat").value;
+    const length = document.getElementById("length").value;
+    const width = document.getElementById("width").value;
+    const message = document.getElementById("message").value;
 
-  const storageChoice = document.querySelector('input[name="storageType"]:checked');
-  const storageType = storageChoice ? storageChoice.value : "";
+    const storage = document.getElementById("storage").checked;
+    const lifting = document.getElementById("lifting").checked;
+    const engineService = document.getElementById("engineService").checked;
 
-  const location = document.getElementById("location").value;
-  const engine = document.getElementById("engine").value;
+    const storageChoice =
+      document.querySelector('input[name="storageType"]:checked');
 
-  const services = Array.from(
-    document.querySelectorAll('.checks input[type="checkbox"]:checked')
-  )
-  .map(item => item.value)
-  .join(", ");
+    const storageType =
+      storageChoice ? storageChoice.value : "";
 
-  const subject = "Tarjouspyyntö - venesäilytys";
+    const location =
+      document.getElementById("location").value;
 
-  let body =
+    const engine =
+      document.getElementById("engine").value;
+
+    const services = Array.from(
+      document.querySelectorAll('.checks input[type="checkbox"]:checked')
+    )
+    .map(item => item.value)
+    .join(", ");
+
+    const subject = "Tarjouspyyntö - venesäilytys";
+
+    let body =
 `Uusi tarjouspyyntö
 
 Nimi: ${name}
@@ -739,42 +848,39 @@ Leveys: ${width}
 Toivotut palvelut:
 ${services}`;
 
-  if (storage) {
-    body += `
+    if (storage) {
+      body += `
 
 Säilytystapa:
 ${storageType}`;
-  }
+    }
 
-  if (lifting) {
-    body += `
+    if (lifting) {
+      body += `
 
 Nostopaikka:
 ${location}`;
-  }
+    }
 
-  if (engineService) {
-    body += `
+    if (engineService) {
+      body += `
 
 Moottori:
 ${engine}`;
-  }
+    }
 
-  body += `
+    body += `
 
 Lisätiedot:
 ${message}`;
 
-  window.location.href =
-    "mailto:kristoffer@fagerlundmarine.fi?subject=" +
-    encodeURIComponent(subject) +
-    "&body=" +
-    encodeURIComponent(body);
-}
+    window.location.href =
+      "mailto:kristoffer@fagerlundmarine.fi?subject=" +
+      encodeURIComponent(subject) +
+      "&body=" +
+      encodeURIComponent(body);
+  }
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
